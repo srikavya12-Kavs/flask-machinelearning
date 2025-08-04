@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='1.idp.jpeg') }}'); background-size: cover; background-position: center;">
+    <h1>FAKE NEWS DETECTION USING MACHINE LEARNING </h1>
+    <form action="/predict" method="post">
+        <textarea name="news" rows="5" cols="50" placeholder="Enter news content here"></textarea><br>
+        <button type="submit">Check</button>
+    </form>
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+    
+    <!-- Footer -->
+    <footer>
+        <p>Done by KAVYA under the guidance of Dr. S. BHUPAL NAIK</p>
+    </footer>
+</body>
+</html>
